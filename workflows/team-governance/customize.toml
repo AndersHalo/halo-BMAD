@@ -1,0 +1,27 @@
+# DO NOT EDIT -- overwritten on every update.
+#
+# Workflow customization surface for team-governance.
+#
+# Override files (not edited here):
+#   {project-root}/_bmad/custom/team-governance.toml         (team overrides)
+#   {project-root}/_bmad/custom/team-governance.user.toml    (personal overrides)
+
+[workflow]
+
+# ── Standard fields ────────────────────────────────────────────────────────────
+
+activation_steps_prepend = []
+activation_steps_append = []
+
+persistent_facts = ["file:{project-root}/**/project-context.md"]
+
+on_complete = ""
+
+# ── Team Governance config ─────────────────────────────────────────────────────
+
+default_hours_per_day = "8"
+# Default hours per day applied to new members who don't specify their own.
+
+governance_dir = "docs/governance"
+# Project-relative path where governance.md is written.
+# Full path: {project-root}/{governance_dir}/governance.md
