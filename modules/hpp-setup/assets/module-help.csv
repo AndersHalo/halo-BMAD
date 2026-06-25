@@ -1,0 +1,4 @@
+module,skill,display-name,menu-code,description,action,args,phase,preceded-by,followed-by,required,output-location,outputs
+hpp,team-governance,Team Governance,TG,Configure team tools and member accounts to generate a team governance document.,configure,{-H: headless mode},anytime,,roadmap-build:build-roadmap,false,docs/governance,team-governance.md
+hpp,roadmap-build,Roadmap Builder,RB,Generate a product roadmap in Now/Next/Later OKR and Gantt formats from a PRD with AI-agent effort estimates.,build-roadmap,{prd_path: path to PRD}|{-H: headless},2-planning,team-governance:configure,prototype-build:build-prototype,false,docs/roadmap,roadmap HTML files
+hpp,prototype-build,Prototype Builder,PB,Generate a multi-screen HTML prototype from a PRD with mock data and scenario switching.,build-prototype,{prd_path: path to PRD}|{-H: headless},3-solutioning,roadmap-build:build-roadmap,,false,docs/prototypes,prototype HTML files

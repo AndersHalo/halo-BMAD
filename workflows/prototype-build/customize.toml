@@ -1,0 +1,28 @@
+# DO NOT EDIT -- overwritten on every update.
+#
+# Workflow customization surface for prototype-build.
+#
+# Override files (not edited here):
+#   {project-root}/_bmad/custom/prototype-build.toml         (team overrides)
+#   {project-root}/_bmad/custom/prototype-build.user.toml    (personal overrides)
+
+[workflow]
+
+# ── Standard fields ────────────────────────────────────────────────────────────
+
+activation_steps_prepend = []
+activation_steps_append = []
+
+persistent_facts = ["file:{project-root}/**/project-context.md"]
+
+on_complete = ""
+
+# ── Prototype Build config ─────────────────────────────────────────────────────
+
+stack = "HTML + CSS + Vanilla JS"
+# Tech stack for generated prototype files.
+# Only HTML + CSS + Vanilla JS is currently supported.
+
+output_dir = "docs/prototypes"
+# Project-relative output directory root.
+# A prototype-named subfolder is created at runtime: {project-root}/{output_dir}/{prototype-name}/
