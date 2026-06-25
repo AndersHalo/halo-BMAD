@@ -1,0 +1,28 @@
+# DO NOT EDIT -- overwritten on every update.
+#
+# Workflow customization surface for roadmap-build.
+#
+# Override files (not edited here):
+#   {project-root}/_bmad/custom/roadmap-build.toml         (team overrides)
+#   {project-root}/_bmad/custom/roadmap-build.user.toml    (personal overrides)
+
+[workflow]
+
+# ── Standard fields ────────────────────────────────────────────────────────────
+
+activation_steps_prepend = []
+activation_steps_append = []
+
+persistent_facts = ["file:{project-root}/**/project-context.md"]
+
+on_complete = ""
+
+# ── Roadmap Build config ──────────────────────────────────────────────────────
+
+governance_path = "{project-root}/docs/governance/governance.md"
+# Path to the team governance file produced by team-governance.
+# Roadmap Build reads this for team profile and effort estimation.
+
+output_dir = "{project-root}/docs/roadmap"
+# Output directory root where roadmap files are written.
+# A product-named subfolder is created at runtime: {output_dir}/{product_name}/
