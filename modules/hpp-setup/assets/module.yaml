@@ -1,0 +1,50 @@
+code: hpp
+name: "Halo Product Module"
+description: "Product team toolkit for prototyping, roadmap generation, and team governance."
+module_version: 1.0.0
+default_selected: false
+
+module_greeting: >
+  Welcome to the Halo Product Module! Run hpp-setup again anytime to reconfigure.
+
+# ── Config variables ──────────────────────────────────────────────────────────
+
+governance_dir:
+  prompt: "Where should the team governance file be saved? (project-relative path)"
+  default: "docs/governance"
+  result: "{project-root}/{value}/governance.md"
+  required: false
+  example: "e.g. docs/governance"
+
+roadmap_output_dir:
+  prompt: "Where should roadmap files be saved? (project-relative path)"
+  default: "docs/roadmap"
+  result: "{project-root}/{value}"
+  required: false
+  example: "e.g. docs/roadmap"
+
+prototype_output_dir:
+  prompt: "Where should prototype files be saved? (project-relative path)"
+  default: "docs/prototypes"
+  result: "{project-root}/{value}"
+  required: false
+  example: "e.g. docs/prototypes"
+
+# ── Directories ───────────────────────────────────────────────────────────────
+
+directories:
+  - "{project-root}/{governance_dir}"
+  - "{project-root}/{roadmap_output_dir}"
+  - "{project-root}/{prototype_output_dir}"
+
+# ── Post-install notes ────────────────────────────────────────────────────────
+
+post-install-notes: |
+  Configure your team first with /team-governance — roadmap-build uses your team profile for effort estimates.
+
+# ── Workflows ─────────────────────────────────────────────────────────────────
+
+workflows:
+  - team-governance
+  - roadmap-build
+  - prototype-build
